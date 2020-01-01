@@ -44,10 +44,7 @@
       <div><label>Client name:</label></div>
       <select v-model="clientFilter">
           <option value='View All'>View All</option>
-          <!-- Use with Mock API -->
-          <!-- <option v-for="report in reports" :key="report.id" :value="report.clientName">{{report.clientName}}</option> -->
 
-            <!-- Use with real API -->
            <option v-for="clientName in clientNames" :key="clientName" :value="clientName">{{clientName}}</option>
           
       </select>
@@ -57,10 +54,7 @@
       <div><label>Address:</label></div>
       <select v-model="addressFilter">
           <option value='View All'>View All</option>
-          <!-- Use with Mock API
-          <option v-for="report in reports" :key="report.id" :value="report.locationAddress">{{report.locationAddress}}</option> -->
 
-          <!-- Use with real API -->
           <option v-for="address in clientAddress" :key="address" :value="address">{{address}}</option>
      
       </select>
@@ -71,11 +65,10 @@
         <div class="rp-info-block">
 
         <div class="rp-image">
-            <!-- this is for database -->
+  
             <img :src="require('../assets/reportImages/' + report.image.imageName)" />
 
-            <!-- this is for mock api -->
-            <!-- <img :src="report.imageName" /> -->
+
 
         </div>
 
@@ -111,23 +104,17 @@
         </div> 
 
         <div class="rp-single">
-            <!-- Mock API -->
-            <!-- Client Name: {{report.clientName}} -->
-            <!-- real api -->
+
             Client Name: {{report.location.clientName}}
         </div>
 
         <div class="rp-single">
-            <!-- mock API
-            Address: {{report.locationAddress}} -->
-            <!-- real api -->
+
             Address: {{report.location.address}}
         </div>
         
         <div class="rp-single">
-            <!-- mock api
-           Location of risk: {{report.locationName}} -->
-            <!-- real api -->
+     
            Location of risk: {{report.location.locationName}}
         </div>
 
@@ -241,16 +228,12 @@ export default {
             }
 
             if(vm.clientFilter != 'View All') {
-                // mock API
-                // filteredLst = filteredLst.filter(report => report.clientName === vm.clientFilter);
-                // Real API
+
                 filteredLst = filteredLst.filter(report => report.location.clientName === vm.clientFilter);
             }
 
             if(vm.addressFilter != 'View All') {
-                // mock API
-                // filteredLst = filteredLst.filter(report => report.locationAddress === vm.addressFilter);
-                // real API
+
                 filteredLst = filteredLst.filter(report => report.location.address === vm.addressFilter);
             }
 
