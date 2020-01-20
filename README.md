@@ -1,21 +1,27 @@
-# Java Final Capstone Starter Projects
+# Java Final Capstone For Tech Elevator
 
-There are two provided starter projects:
+This is my final project from Tech Elvator's coding boot camp. 
 
-1. mvc
-2. vue
+The application was developed for Fidelis NA, a local security consulting company, who wanted to improve the way they reported and tracked security risks for their clients. Fidelis required the application to support multiple user roles and to restrict functionality based on those roles.  
 
-## MVC 
-The MVC starter project provides a starter project for use with SpringMVC.  It includes authorization and user management, as well as database access.  The Maven POM has been configured for all dependencies needed for the project, however, additional ones may be added as needed.  
+The core functions of the application are:
 
-## Vue.js
+Allow a user to report a risk they see. The report should include a picture of the issue, a description, a location, as well as the name of the user making the report.
 
-The VUE starter project provides a Java API starter project as the Backend and a Vue starter project for the Frontend.   It includes JWT Authentication, Authorization, and database access.   The Maven POM in the Backend has been configured for all depenencies needed for the project and the Vue package-lock includes all the NPM dependencies needed for the Vue project.  In both cases, additional ones may be added as needed.  
+A user on the maintanence team must be able to view reports that have been made and assign priority levels to them. 
 
-## Additional Information
+A user on the supervisor team must be able to view reports and to filter them by priority, repair status, and location. These filters are stackable, so a user can look for all high priority issues that are not repaired at a certain location for instance.
 
-READMEs for each project have been provided in the relevant project directory, please review these ReadMes before starting the project.  
+A supervisor must also be able to update the repair status of a report or mark the report as a duplicate of a previous report. When marking an issue repaired a user is prompted for the name of the person verifying the issue is repaired.
 
-These are your team's projects and you should feel free to add/remove any functionality at your discretion.  
+A system admin user must be able to create new users and assign them roles.
 
-It is recommended that once you commit to a selection between either a MVC or VUE.js project that you remove the other starter project for clarrification of where your team should be working.  
+All users must have to be logged in to use the application, and users must be able to change their password.
+
+## Technologies Used in the Project
+
+This project runs on a Vue.js frontend and uses a REST API that runs on a Java backend server. Data is stored in a PostgreSql database.
+
+## Running
+
+To run this application you will need to start the Java backend on a Tomcat server running on port 8080. 
