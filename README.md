@@ -22,6 +22,13 @@ All users must have to be logged in to use the application, and users must be ab
 
 This project runs on a Vue.js frontend and uses a REST API that runs on a Java backend server. Data is stored in a PostgreSql database.
 
+## My Role
+
+I played the part of a full stack developer in this project and was able to help where needed. I spent a lot of time working to get the image uploading to work correctly, I worked on getting Vue to display the images once the reports were loaded from the API, I helped work out some of the kinks with the JDBC class that pulled reports from the database, and I spent a good bit of time getting vue to use the API correctly. 
+
+To help avoid any bottlenecks caused by the lack of a fully functional API I also made a mock API for the front end team to use while the backend team was working. 
+
 ## Running
 
 To run this application you will need to start the Java backend on a Tomcat server running on port 8080. 
+To run the front end run the Vue project on an Node server and connect to the port it says to.
